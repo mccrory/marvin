@@ -1,0 +1,15 @@
+#inner.row
+  = partial 'partials/nav/pages'
+  %section#body
+    =flash_tag :error
+    %form.row{:action => url(:pages, :create), :method => "post"}
+      %section
+        %p
+          %input{:name => "page[title]", :placeholder => "Title", :type => "text"}/
+        %p
+          %textarea{:name => "page[body]"}
+      %section.meta.row
+        %p.sixcol
+          %input{:name => "page[permalink]", :placeholder => "Permalink (required)", :type => "text"}/
+        %p.sixcol.last
+          %button.green{:type => "submit", :value => "Publish"} Publish

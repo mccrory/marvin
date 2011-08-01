@@ -1,0 +1,247 @@
+/*
+	
+		file: css/application.css
+*/
+
+/*
+	= Appendix
+		I. Media Queries
+		II. 
+*/
+
+/*
+	I. Animations
+*/
+
+/* Disabled for development.
+@-webkit-keyframes reset {
+	0% {
+		opacity: 0;
+	}
+	
+	100% {
+		opacity: 0;
+	}
+}
+ 
+@-webkit-keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	
+	60% {
+		opacity: 0;
+	}
+	
+	100% {
+		opacity: 1;
+	}
+}
+
+#contain > header {
+	-webkit-animation-name: reset, fade-in;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-timing-function: ease-in;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-delay: 0, 0;
+}
+
+#main {
+	-webkit-animation-name: reset, fade-in;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-timing-function: ease-in;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-delay: 0, 0.25s;
+}
+
+#contain > footer {
+	-webkit-animation-name: reset, fade-in;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-timing-function: ease-in;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-delay: 0, 0.5s;
+}
+*/
+
+/*
+	I. Media Queries
+*/
+
+@media handheld, only screen and (max-width: 767px) { /* Handheld devices. */
+
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) { /* iPhone 4 */
+
+}
+
+/*
+	II. 
+*/
+
+body {
+	color: #444;
+	/*font: 13px/1.5em "adelle-1", "adelle-2", serif;*/
+	font: 13px/1.5em "Helvetica Neue", Helvetica, Arial, sans-serif;
+	/*font: 13px/1.5em "ff-enzo-web-1", "ff-enzo-web-2", sans-serif;*/
+}
+
+p + p, ul, ol {
+	margin: 2em 0;
+}
+
+a {
+	color: #93b45a;
+	text-decoration: none;
+}
+
+blockquote {
+	color: #666;
+	border-left: 1px solid #e0e0e0;
+	padding-left: 2em;
+}
+
+blockquote cite p {
+	font-style: italic;
+}
+
+pre, code {
+	font: 11px "Anonymous Pro", Monaco, Courier New, Courier, monospace;
+}
+
+a:focus {
+	
+}
+
+a:hover {
+	color: #7f9953;
+}
+
+h1 {
+	font-weight: 700;
+	font-size: 1.125em;
+}
+
+h2 {
+	font-size: 1.25em;
+	margin-bottom: 1em;
+}
+
+h3 {
+	font-size: 1.125em;
+	margin-bottom: 0.5em;
+}
+
+ul li, ol li {
+	margin-left: 4em;
+}
+
+li ul, li ol {
+	margin: 0 0 0 -2em;
+}
+
+#contain {
+	margin: 4em 0;
+}
+
+input, textarea {
+	width: 50%;
+}
+
+input:focus, textarea:focus {
+	border: 1px solid #93b45a;
+}
+
+textarea {
+	height: 10em;
+}
+
+input, textarea, button{
+	border: 1px solid #ccc;
+	font: 13px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	outline: none;
+	padding: 0.5em;
+}
+
+/*
+	III. Header
+*/
+
+#contain > header {
+	border-bottom: 1px solid #e0e0e0;
+	margin-bottom: 4em;
+	padding-bottom: 2em;
+}
+
+#contain > header ul {
+	margin: 0;
+}
+
+#contain > header li {
+	display: inline;
+	margin: 0;
+}
+
+#contain > header li:after {
+	content: " \2014 ";
+}
+
+#contain > header li:last-child:after {
+	content: "";
+}
+
+#contain > header nav {
+	margin-top: 1em;
+}
+
+/*
+	IV. Body
+*/
+
+.articles article {
+	margin-bottom: 7.5em;
+}
+
+.articles aside {
+	font-size: 0.75em;
+	font-style: italic;
+}
+
+.articles aside a {
+	color: #666;
+}
+
+.articles aside a:hover {
+	color: #444;
+}
+
+.articles footer {
+	border-top: 1px solid #efefef;
+	padding-top: 3em;
+}
+
+.articles footer .left {
+	float: left;
+}
+
+.articles footer .right {
+	float: right;
+	margin-top: -0.25em;
+}
+
+.single footer {
+	border-top: 1px solid #e0e0e0;
+	padding-top: 4em;
+}
+
+/*
+	V. Footer
+*/
+
+#contain > footer {
+	border-top: 1px solid #e0e0e0;
+	color: #999;
+	font-size: 0.75em;
+	margin-top: 4em;
+	padding-top: 2em;
+}

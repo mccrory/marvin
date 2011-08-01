@@ -1,0 +1,32 @@
+%article.row{:class => @post.type}
+  = partial 'posts/' + @post.type, :locals => { :post => @post }
+  %aside.fourcol.last
+    %time{:timedate => @post.created_at}
+      %a{:href => url(:post, :permalink => @post.permalink)}= @post.created_at.strftime("%d %B %Y")
+%footer
+  - @post.comments.each do |comment|
+    - if comment.approved
+      %article.row
+        %section.eightcol
+          = to_html(comment.body)
+        %aside.fourcol.last
+          %h3
+            - if !comment.url.blank?
+              %a{:href => comment.url}= comment.name
+            - else
+              = comment.name
+          %p
+            %time{:datetime => comment.created_at}= comment.created_at.strftime("%d %B %Y")
+  
+  %form{:action => "/marvin/comments/create", :method => "post"}
+    %p  
+      %input{:name => "comment[name]", :placeholder => "Name", :type => "text"}/
+    %p
+      %input{:name => "comment[email]", :placeholder => "Email (required)", :type => "text"}/
+    %p
+      %input{:name => "comment[url]", :placeholder => "URL (optional)", :type => "text"}/
+    %p
+      %textarea{:name => "comment[body]"}
+    %p
+      %input{:name => "id", :type => "hidden", :value => @post.id}
+      %button{:type => "submit"} Speak

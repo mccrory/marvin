@@ -1,0 +1,22 @@
+- if @fill
+  #link.form
+    %section.row
+      %p.sixcol
+        %input{:name => "post[url]", :type => "text", :value => @post.url}/
+      %p.sixcol.last
+        %input{:name => "post[title]", :type => "text", :value => @post.title}/
+    %section
+      %p
+        %textarea{:name => "post[caption]"}= @post.caption
+      
+- else
+  #link.form
+    %section.row
+      %p.sixcol
+        %input{:name => "post[url]", :placeholder => "URL"}/
+      %p.sixcol.last
+        %input{:name => "post[title]", :placeholder => "Title"}/
+    %section
+      %p
+        %textarea{:name => "post[body]"}
+      

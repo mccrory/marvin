@@ -1,0 +1,19 @@
+- if @fill
+  #quote.form
+    %section
+      %p
+        %textarea{:name => "post[quote]"}= @post.quote
+      %p
+        %textarea.small{:name => "post[source]"}= @post.source
+      %p
+        %textarea{:name => "post[caption]"}= @post.caption
+
+- else
+  #quote.form
+    %section
+      %p
+        %textarea{:name => "post[quote]", :placeholder => "Quote"}
+      %p
+        %textarea.small{:name => "post[source]", :placeholder => "Source"}
+      %p
+        %textarea{:name => "post[caption]"}

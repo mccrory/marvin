@@ -1,0 +1,28 @@
+#inner.row
+  = partial 'partials/nav/pages'
+  %section#body
+    =flash_tag :notice
+    - if !@pages.blank?
+      %table
+        %thead
+          %tr
+            %th Title
+            %th Created At
+            %th Actions
+        %tbody
+          - @pages.each do |page|
+            %tr
+              %td= page.title
+              %td= page.created_at
+              %td
+                %a{:href => url(:pages, :edit, :id => page.id)} Edit
+                &mdash;
+                %form.inline{:action => url(:pages, :destroy), :method => "post"}
+                  %input{:name => "id", :type => "hidden", :value => page.id}/
+                  %input{:name => "_method", :type => "hidden", :value => "delete"}/
+                  %button.inline{:type => "submit", :value => "Delete"} Delete
+                    
+    - else
+      %p
+        No pages! 
+        %a{ :href => url(:pages, :new)} Why don't you make one?

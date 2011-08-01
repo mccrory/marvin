@@ -1,0 +1,289 @@
+/*
+	
+		file: css/application.css
+*/
+
+/*
+	= Appendix
+		I. Media Queries
+		II. 
+*/
+
+/*
+	I. Typefaces
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,400,600,700,800|Droid+Serif:400,700,400italic,700italic&v2|Anonymous+Pro:400,400italic,700,700italic&v2);
+
+/*
+	II. Media Queries
+*/
+
+@media handheld, only screen and (max-width: 767px) { /* Handheld devices. */
+
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) { /* iPhone 4 */
+
+}
+
+/*
+	III. 
+*/
+
+body {
+	background: #efefef;
+	color: #444;
+	font: 11px/1.5em "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Droid Serif", Georgia, serif;
+}
+
+h1 {
+	font-size: 1.5em;
+	font-weight: normal;
+}
+
+input, button {
+	font: 11px/1.5em "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+textarea, code {
+	font: 11px/1.5em "Anonymous Pro", Monaco, Courier New, Courier, monospaced;
+}
+
+code {
+	display: inline;
+}
+
+input, textarea, button {
+	border: 1px solid #e0e0e0;
+	padding: 0.5em;
+	outline: none;
+}
+
+button.inline, form.inline {
+	background: none;
+	border: none;
+	padding: 0;
+	margin: 0;
+	display: inline;
+}
+
+textarea.small {
+	height: 10em;
+}
+
+input:focus, textarea:focus {
+	border: 1px solid #ccc;
+}
+
+input[type="text"] {
+	width: 50%;
+}
+
+textarea {
+	height: 20em;
+	width: 98%;
+	max-width: 98%;
+}
+
+.sixcol input, .sixcol select {
+	width: 97%;
+}
+
+select option {
+	overflow: visible:
+}
+
+.chzn-drop {
+	z-index: 100;
+}
+
+form button {
+	float: right;
+	margin-right: 2px;
+}
+
+button.green {
+	background: #CEFFA8;
+	border: 1px solid #64D111;
+	margin-top: 2em;
+}
+
+table {
+	border-spacing: 0.25em;
+	width: 98%;
+}
+
+thead {
+	background: #444;
+	text-align: left;
+	display: table-header-group;
+	vertical-align: middle;
+	border-color: inherit;
+	color: #fafafa;
+}
+
+th {
+	padding: .25em .5em;
+}
+
+td {
+	padding: .5em .5em;
+}
+
+tr:nth-child(2n+2) {
+	background: #fff;
+}
+
+/*
+	IV. Header
+*/
+
+#contain > header {
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 4em;
+}
+
+#contain > header .black {
+	background: #444;
+	padding: 4em 0 2em 0;
+}
+
+#contain > header .black a {
+	color: #fafafa;
+}
+
+#contain > header .white {
+	background: #fafafa;
+	padding: 1em 0;
+}
+
+#contain > header .white a:hover {
+	color: #666;
+}
+
+#contain > header hgroup:first-child {
+	margin: 0 auto;
+	width: 100%;
+}
+
+#contain > header nav ul {
+	float: right;
+}
+
+#contain > header .white p {
+	display: inline;
+}
+
+#contain > header nav ul li {
+	display: inline;
+	margin-left: 1em;
+}
+
+#contain > header nav ul li.selected {
+	border-bottom: 5px solid #fafafa;
+}
+
+#contain > header nav ul li a:hover {
+	border-bottom: 2px solid #fafafa;
+	padding-bottom: 1em;
+}
+
+/*
+	V. Body
+*/
+
+#main nav {
+	margin-bottom: 2.5em;
+}
+
+#main nav li {
+	display: inline;
+	margin: 0;
+}
+
+#main nav li a{
+float: left;
+display: block;
+text-decoration: none;
+margin: 0;
+padding: /*7px 8px; /*padding inside each tab*/0.5em 1em;
+color: #444;
+/*border-right: 3px solid #efefef;*/
+margin-right: 1em;
+background: #ccc; /*background of tabs (default state)*/
+}
+
+#main nav li a:visited{
+color: #444;
+}
+
+#main nav li.selected a{
+background: #fafafa;
+border-bottom: 1px solid #fafafa;
+border-left: 1px solid #ccc;
+border-top: 1px solid #ccc;
+border-right: 1px solid #ccc;
+}
+#main nav li a:hover {
+	background: #e1e1e1;
+}
+
+#body {
+	background: #fafafa;
+	border: 1px solid #ccc;
+	padding: 2em 1em 2em 1em;
+}
+
+form p {
+	margin-bottom: 1em;
+}
+
+.right {
+	float: right !important;
+}
+
+.meta {
+	margin-top: 2em;
+	padding-top: 2em;
+	border-top: 1px solid #eee;
+}
+
+.error {
+	border: 2px solid #FF0000;
+	background: rgba(255, 0, 0, 0.5);
+}
+
+.notice {
+	border: 2px solid rgba(0, 255, 0, 1);
+	background: rgba(0, 255, 0, 0.5);
+}
+
+.error, .notice {
+	margin-bottom: 2em;
+	padding: 1em;
+}
+
+
+/*
+	VI. Footer
+*/
+
+#contain > footer {
+	margin-bottom: 4em;
+	text-align: center;
+	padding-top: 3em;
+}
+
+#contain > footer p:nth-child(2) {
+	color: #ccc;
+}

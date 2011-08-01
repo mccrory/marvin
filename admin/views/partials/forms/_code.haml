@@ -1,0 +1,16 @@
+- if @fill
+  #code.form
+    %section
+      %p
+        %input{:name => "post[gist_url]", :type => "text", :value => @post.gist_url}/
+      %p
+        %textarea{:name => "post[caption]"}= @post.caption
+      
+- else
+  #code.form
+    %section
+      %p
+        %input{:name => "post[gist_url]", :placeholder => "Gist URL"}/
+      %p
+        %textarea{:name => "post[body]"}
+      

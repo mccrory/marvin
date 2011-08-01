@@ -1,0 +1,6 @@
+%section.eightcol
+  - if post.title
+    %header
+      %h2
+        %a{:href => url(:post, :permalink => post.permalink)}= post.title
+    = to_html(post.body)

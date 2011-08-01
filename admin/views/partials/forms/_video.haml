@@ -1,0 +1,15 @@
+- if @fill
+  #video.form
+    %section
+      %p
+        %input{:name => "post[embed]", :type => "text", :value => @post.embed}/
+      %p
+        %textarea{:name => "post[caption]"}= @post.caption
+        
+- else
+  #video.form
+    %section
+      %p
+        %input{:name => "post[embed]", :placeholder => "Embed code", :type => "text"}/
+      %p
+        %textarea{:name => "post[caption]"}

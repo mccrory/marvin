@@ -1,0 +1,25 @@
+- if @fill
+  #photo.form
+    %section
+      %p
+        %input{:name => "post[url]", :type => "text", :value => @@post.url}/
+      %p
+        %textarea{:name => "post[caption]"}= @@post.caption
+    %section.row
+      %p.sixcol
+        %input{:name => "post[alt]", :type => "text", :value => @@post.alt}/
+      %p.sixcol.last
+        %input{:name => "post[click]", :type => "text", :value => @@post.click}/
+
+- else
+  #photo.form
+    %section
+      %p
+        %input{:name => "post[url]", :placeholder => "URL of image", :type => "text"}/
+      %p
+        %textarea{:name => "post[caption]"}
+    %section.row
+      %p.sixcol
+        %input{:name => "post[alt]", :placeholder => "Alternative text", :type => "text"}/
+      %p.sixcol.last
+        %input{:name => "post[click]", :placeholder => "Click-through URL", :type => "text"}/

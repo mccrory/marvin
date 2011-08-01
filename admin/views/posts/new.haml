@@ -1,0 +1,14 @@
+#inner.row
+  = partial 'partials/nav/posts'
+  %section#body
+    =flash_tag :error
+    %form.row{:action => url(:posts, :create), :method => "post"}
+      = partial 'partials/forms/' + @type, :object => @fill
+      %section.meta.row
+        %p.sixcol
+          %input{:name => "post[permalink]", :placeholder => "Permalink (required)", :type => "text"}/
+        %p.sixcol.last
+          %input{:name => "post[created_at]", :placeholder => Time.now, :type => "text"}/
+          %input.type{:name => "type", :type => "hidden", :value => @type}/
+          %input.type{:name => "post[type]", :type => "hidden", :value => @type}/
+          %button.green{:type => "submit", :value => "Publish"} Publish

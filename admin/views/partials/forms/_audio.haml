@@ -1,0 +1,37 @@
+- if @fill
+  #audio.form
+    %section.row
+      %p
+        %input{:name => "post[url]", :type => "text", :value => @post.url}/
+    %section.row
+      %p.sixcol
+        %input{:name => "post[track]", :type => "text", :value => @post.track}/
+      %p.sixcol.last
+        %input{:name => "post[artist]", :type => "text", :value => @post.artist}/
+    %section.row
+      %p.sixcol
+        %input{:name => "post[album]", :type => "text", :value => @post.album}/
+      %p.sixcol.last
+        %input{:name => "post[art]", :type => "text", :value => @post.art}/
+    %section
+      %p
+        %textarea{:name => "post[caption]"}= @post.caption
+
+- else
+  #audio.form
+    %section.row
+      %p
+        %input{:name => "post[url]", :placeholder => "URL of audio", :type => "text"}/
+    %section.row
+      %p.sixcol
+        %input{:name => "post[track]", :placeholder => "Track", :type => "text"}/
+      %p.sixcol.last
+        %input{:name => "post[artist]", :placeholder => "Artist", :type => "text"}/
+    %section.row
+      %p.sixcol
+        %input{:name => "post[album]", :placeholder => "Album", :type => "text"}/
+      %p.sixcol.last
+        %input{:name => "post[art]", :placeholder => "Album Art", :type => "text"}/
+    %section
+      %p
+        %textarea{:name => "post[caption]"}

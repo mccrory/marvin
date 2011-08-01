@@ -1,0 +1,6 @@
+%section.eightcol
+  %p
+    - if !post.click.blank?
+      %a{:href => post.click}
+    %img{:alt => post.alt, :src => "http://farm4.static.flickr.com/3396/4575629475_fd3b8b187b_z.jpg"}/
+    =to_html(post.caption)
