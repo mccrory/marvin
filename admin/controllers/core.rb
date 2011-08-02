@@ -12,17 +12,6 @@ Admin.controllers do
     
     # POST /marvin/import
     post :import do
-      # Only supports Tumblr, for now.
-      url = params[:url]
-      
-      class Tumblr
-        include HTTParty
-        default_params :output => 'json'
-      end
-      
-      request = Tumblr.get(url + "/api/read?num=100")
-      posts = request["tumblr"]["posts"]["post"]
-      
       # TO-DO
     end
   
@@ -31,14 +20,27 @@ Admin.controllers do
     render :support
   end
   
-  ###
+end
+
+Admin.controllers :sessions do
   
-  # GET /marvin/login
-  get :login do
+  get :new do
+    render "sessions/new", :layout => false
   end
   
-  # GET /marvin/logout
-  get :logout do
+    post :create do
+      if account = Account.authenticate(params[:email], params[:password])
+        set_current_account(account)
+        redirect url(:index)
+      else
+        flash[:warning] = "Incorrect email/password combination."
+        redirect url(:sessions, :new)
+      end
+    end
+    
+  get :destroy do
+    set_current_account(nil)
+    redirect url(:sessions, :new)
   end
   
 end

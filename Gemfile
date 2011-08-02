@@ -20,7 +20,6 @@ gem 'maruku'
 gem 'rspec', :group => "test"
 gem 'rack-test', :require => "rack/test", :group => "test"
 
-
 # Padrino
 gem 'padrino', '0.10.0'
 # Padrino EDGE

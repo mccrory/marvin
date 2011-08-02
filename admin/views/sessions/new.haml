@@ -1,0 +1,7 @@
+%form{:action => url(:sessions, :create), :method => "post"}
+  %p
+    %input{:name => "email", :placeholder => "Email", :type => "email"}/
+  %p
+    %input{:name => "password", :placeholder => "Password", :type => "password"}/
+  %p
+    %button{:type => "submit"} Login

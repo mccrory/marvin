@@ -1,0 +1,19 @@
+#inner.row
+  = partial 'partials/nav/accounts'
+  %section#body
+    =flash_tag :error
+    %form.row{:action => url(:accounts, :create), :method => "post"}
+      %section.row
+        %p.sixcol
+          %input{:name => "account[name]", :placeholder => "Name", :type => "text"}/
+        %p.sixcol.last
+          %input{:name => "account[surname]", :placeholder => "Surname", :type => "text"}/
+      %section.row
+        %p.sixcol
+          %input{:name => "account[email]", :placeholder => "Email", :type => "email"}/
+        %p.sixcol.last
+          %input{:name => "account[password]", :placeholder => "Password", :type => "password"}/
+      %section.row
+        %p.sixcol
+        %p.sixcol.last
+          %button.green{:type => "submit", :value => "Create"} Create

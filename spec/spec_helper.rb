@@ -9,14 +9,5 @@ def app
   ##
   # You can handle all padrino applications using instead:
   #   Padrino.application
-  Cooly.tap { |app|  }
-end
-
-def session
-  last_request.env['rack.session']
-end
-
-def generate_token(length)
-  chars = ('a'..'z').to_a + ('A'..'Z').to_a
-  (0...length).collect { chars[Kernel.rand(chars.length)] }.join
+  MarvinTest.tap { |app|  }
 end

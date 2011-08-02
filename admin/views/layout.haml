@@ -26,7 +26,7 @@
         .black
           %hgroup.row
             %h1.sixcol
-              %a{:href => url(:index)}= Blog.name
+              %a{:href => Marvin.url(:index)}= Blog.name
             %nav.sixcol.last
               %ul
                 %li
@@ -38,12 +38,13 @@
                 %li
                   %a{:href => url(:pages, :index)} Pages
                 %li
-                  %a{:href => url(:users, :index)} Users
+                  %a{:href => url(:accounts, :index)} Users
         .white
           %hgroup.row
             %p
-              Hello, Ethan!
-              %a{:href => url(:logout)} Logout →
+              Hello, 
+              =current_account.name
+              %a{:href => url(:sessions, :destroy)} Logout →
             %p.right
               %a{:href => Marvin.url(:index)} View Site →
       #main{:role => "main"}

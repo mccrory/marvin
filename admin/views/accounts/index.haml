@@ -1,0 +1,28 @@
+#inner.row
+  = partial 'partials/nav/accounts'
+  %section#body
+    =flash_tag :notice
+    - if !@accounts.blank?
+      %table
+        %thead
+          %tr
+            %th Name
+            %th Email
+            %th Created At
+            %th Actions
+        %tbody
+          - @accounts.each do |account|
+            %tr
+              %td= "#{account.name} #{account.surname}"
+              %td= account.email
+              %td
+                %a{:href => url(:accounts, :edit, :id => account.id)} Edit
+                &mdash;
+                %form.inline{:action => url(:accounts, :destroy), :method => "post"}
+                  %input{:name => "id", :type => "hidden", :value => account.id}/
+                  %input{:name => "_method", :type => "hidden", :value => "delete"}/
+                  %button.inline{:type => "submit", :value => "Delete"} Delete
+                    
+    - else
+      %p
+        No accounts? How is that possible?

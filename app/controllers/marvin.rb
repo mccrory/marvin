@@ -24,7 +24,7 @@ Marvin.controllers do
   # Display a single post.
   get :post, :map => "/:permalink" do
     @post = Post.find_by_permalink(params[:permalink])
-    @comments = @post.comments.sort(:updated_at.desc)
+    #@comments = @post.comments.sort(:updated_at.desc)
     
     render :post
   end
