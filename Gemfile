@@ -13,8 +13,8 @@ gem 'haml'
 gem 'mongo_mapper'
 gem 'bson_ext', :require => "mongo"
 gem 'canable'
-gem 'httparty'
 gem 'maruku'
+gem 'paginator'
 
 # Test requirements
 gem 'rspec', :group => "test"

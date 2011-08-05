@@ -7,7 +7,19 @@ Marvin.controllers do
   # GET /
   # Display the post index.
   get :index do
-    @posts = Post.sort(:updated_at.desc)
+    paginate!(Post, 10)
+  
+    @posts = @paginator.page(1)
+    
+    render :index
+  end
+  
+  # GET /page/:number
+  # Display paginated stuff.
+  get :paginate, :map => '/page/:number' do
+    paginate!(Post, 10)
+    
+    @posts = @paginator.page(params[:number])
     
     render :index
   end
@@ -22,7 +34,7 @@ Marvin.controllers do
   
   # GET /:year/:month/:day/:permalink
   # Display a single post.
-  get :post, :map => "/:permalink" do
+  get :post, :map => "/post/:permalink" do
     @post = Post.find_by_permalink(params[:permalink])
     #@comments = @post.comments.sort(:updated_at.desc)
     

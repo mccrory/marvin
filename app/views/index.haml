@@ -7,3 +7,14 @@
           %a{:href => url(:post, :permalink => post.permalink)}= post.created_at.strftime("%d %B %Y")
 - else
   %p No posts yet!
+  
+%footer
+  - if @posts.prev
+    %p.left
+      - if @posts.prev.number == 1
+        %a{:href => url(:index)} &larr; Older Entries
+      - else
+        %a{:href => url(:paginate, :number => @posts.prev.number) } &larr; Older Entries
+  - if @posts.next
+    %p.right
+      %a{:href => url(:paginate, :number => @posts.next.number)} Newer Entries &rarr;

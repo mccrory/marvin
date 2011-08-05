@@ -1,0 +1,7 @@
+%article.row
+  %section.eightcol
+    %header
+      %h2
+        %a{:href => url(:page, :permalink => @page.permalink)}= @page.title
+    =to_html(@page.body)
+  %aside.fourcol.last

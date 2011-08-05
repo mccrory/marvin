@@ -10,13 +10,12 @@ Bundler.require(:default, PADRINO_ENV)
 require 'yaml'
 require 'ostruct'
 
-yaml = YAML::load(File.open(PADRINO_ROOT + "/marvin.yml"))
+@@yaml = YAML::load(File.open(PADRINO_ROOT + "/marvin.yml"))
 
 Blog = OpenStruct.new(
-  :name => yaml["name"],
-  :description => yaml["description"],
-  :theme => yaml["theme"],
-  :base_url => yaml["url"]
+  :name => @@yaml["name"],
+  :description => @@yaml["description"],
+  :theme => @@yaml["theme"],
 )
 ##
 # Enable devel logging
