@@ -9,5 +9,5 @@ def app
   ##
   # You can handle all padrino applications using instead:
   #   Padrino.application
-  MarvinTest.tap { |app|  }
+  Marvin.tap { |app|  }
 end
