@@ -1,3 +1,5 @@
 name: Marvin
 description: The default description.
-url: http://localhost:8080/
+url: http://localhost:8080
+options:
+  feedburner: http://feeds.feedburner.com/liffofethan

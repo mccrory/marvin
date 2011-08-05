@@ -1,24 +1,29 @@
-xml.instruct!
-xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
+xml.instruct! :xml, :version => '1.0'
+xml.rss :version => "2.0" do
   xml.channel do
-    xml.title Blog.title
-    xml.description Blog.description
-    xml.link url(:index)
+    xml.title Blog.name
+    xml.description Blog.descripton
+    xml.link Blog.url
 
-    for post in @posts
+    @posts.each do |post|
       xml.item do
-        if !post.title.blank?
+        if post.type == "text"
           xml.title post.title
         else
           xml.title post.type.camelize
         end
-        if !post.body.blank?
-          xml.description post.body
-        elsif !post.caption.blank?
-          xml.description post.caption
+        xml.link Blog.url + url(:post, :permalink => post.permalink)
+        if post.type == "text"
+          xml.description to_html(post.body)
+        elsif post.type == "photo"
+          xml.description "<img src='#{post.url}' />"
+        else
+          if post.caption
+            xml.description to_html(post.caption)
+          end
         end
-        xml.pubDate post.created_at.to_s(:rfc822)
-        xml.link url(:post, :permalink => post.permalink)
+        xml.pubDate Time.parse(post.created_at.to_s).rfc822()
+        xml.guid Blog.url + url(:post, :permalink => post.permalink)
       end
     end
   end

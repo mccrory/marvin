@@ -12,10 +12,17 @@ require 'ostruct'
 
 @@yaml = YAML::load(File.open(PADRINO_ROOT + "/marvin.yml"))
 
+if @@yaml["options"]["feedburner"]
+  feed = @@yaml["options"]["feedburner"]
+else
+  feed = "feed.xml"
+end
+
 Blog = OpenStruct.new(
   :name => @@yaml["name"],
   :description => @@yaml["description"],
-  :theme => @@yaml["theme"],
+  :url => @@yaml["url"],
+  :feed => feed
 )
 ##
 # Enable devel logging

@@ -24,12 +24,12 @@ Marvin.controllers do
     render :index
   end
   
-  # GET /feed.xml
+  # GET /feed.atom
   # A RSS feed.
   get :feed, :provides => :xml do
     @posts = Post.sort(:updated_at.desc)
     
-    builder :feed
+    builder :'feed'
   end
   
   # GET /:year/:month/:day/:permalink
