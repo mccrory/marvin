@@ -14,15 +14,14 @@
     
     %meta{:content => Blog.description, :name => "description"}
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    
     %link{:href => "/img/favicon.ico", :rel => "shortcut icon"}
     %link{:href => "/img/apple-touch-icon.png", :rel => "apple-touch-icon"}
     %link{:href => "/css/gyaku.css", :rel => "stylesheet"}
     %link{:href => "/css/application.css", :rel => "stylesheet"}
     %link{:href => Blog.feed, :rel => "alternate", :type => "application/rss+xml"}
+    
     %script{:src => "/jsc/lib/modernizr-1.7.min.js"}
-    %script{:src => "http://use.typekit.com/lux8yqy.js", :type => "text/javascript"}
-    :javascript
-      try{Typekit.load();}catch(e){} 
   %body
     #contain
       %header.row

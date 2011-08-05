@@ -1,5 +1,5 @@
 /*
-	
+	Marvin
 		file: css/application.css
 */
 
@@ -81,18 +81,16 @@
 
 body {
 	color: #444;
-	/*font: 13px/1.5em "adelle-1", "adelle-2", serif;*/
 	font: 13px/1.5em "Helvetica Neue", Helvetica, Arial, sans-serif;
-	/*font: 13px/1.5em "ff-enzo-web-1", "ff-enzo-web-2", sans-serif;*/
-}
-
-p + p, ul, ol {
-	margin: 2em 0;
 }
 
 a {
 	color: #93b45a;
 	text-decoration: none;
+}
+
+a:hover {
+	color: #7f9953;
 }
 
 blockquote {
@@ -105,17 +103,10 @@ blockquote cite p {
 	font-style: italic;
 }
 
-pre, code {
+code, pre {
 	font: 11px "Anonymous Pro", Monaco, Courier New, Courier, monospace;
 }
 
-a:focus {
-	
-}
-
-a:hover {
-	color: #7f9953;
-}
 
 h1 {
 	font-weight: 700;
@@ -132,16 +123,11 @@ h3 {
 	margin-bottom: 0.5em;
 }
 
-ul li, ol li {
-	margin-left: 4em;
-}
-
-li ul, li ol {
-	margin: 0 0 0 -2em;
-}
-
-#contain {
-	margin: 4em 0;
+input, textarea, button {
+	border: 1px solid #ccc;
+	font: 13px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	outline: none;
+	padding: 0.5em;
 }
 
 input, textarea {
@@ -152,15 +138,24 @@ input:focus, textarea:focus {
 	border: 1px solid #93b45a;
 }
 
+li ol, li ul {
+	margin: 0 0 0 -2em;
+}
+
+ol li, ul li {
+	margin-left: 4em;
+}
+
+p + p, ul, ol {
+	margin: 2em 0;
+}
+
 textarea {
 	height: 10em;
 }
 
-input, textarea, button{
-	border: 1px solid #ccc;
-	font: 13px "Helvetica Neue", Helvetica, Arial, sans-serif;
-	outline: none;
-	padding: 0.5em;
+#contain {
+	margin: 4em 0;
 }
 
 /*

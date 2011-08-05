@@ -42,6 +42,33 @@ a {
 	text-decoration: none;
 }
 
+button.inline, form.inline {
+	background: none;
+	border: none;
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+
+button.green {
+	background: #CEFFA8;
+	border: 1px solid #64D111;
+	margin-top: 2em;
+}
+
+code {
+	display: inline;
+}
+
+form button {
+	float: right;
+	margin-right: 2px;
+}
+
+form p {
+	margin-bottom: 1em;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Droid Serif", Georgia, serif;
 }
@@ -55,30 +82,10 @@ input, button {
 	font: 11px/1.5em "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
-textarea, code {
-	font: 11px/1.5em "Anonymous Pro", Monaco, Courier New, Courier, monospaced;
-}
-
-code {
-	display: inline;
-}
-
 input, textarea, button {
 	border: 1px solid #e0e0e0;
-	padding: 0.5em;
 	outline: none;
-}
-
-button.inline, form.inline {
-	background: none;
-	border: none;
-	padding: 0;
-	margin: 0;
-	display: inline;
-}
-
-textarea.small {
-	height: 10em;
+	padding: 0.5em;
 }
 
 input:focus, textarea:focus {
@@ -89,33 +96,22 @@ input[type="text"] {
 	width: 50%;
 }
 
-textarea {
-	height: 20em;
-	width: 98%;
-	max-width: 98%;
-}
-
-.sixcol input, .sixcol select {
-	width: 97%;
-}
-
 select option {
 	overflow: visible:
 }
 
-.chzn-drop {
-	z-index: 100;
+textarea {
+	height: 20em;
+	max-width: 98%;
+	width: 98%;
 }
 
-form button {
-	float: right;
-	margin-right: 2px;
+textarea, code {
+	font: 11px/1.5em "Anonymous Pro", Monaco, Courier New, Courier, monospaced;
 }
 
-button.green {
-	background: #CEFFA8;
-	border: 1px solid #64D111;
-	margin-top: 2em;
+textarea.small {
+	height: 10em;
 }
 
 table {
@@ -125,19 +121,19 @@ table {
 
 thead {
 	background: #444;
-	text-align: left;
-	display: table-header-group;
-	vertical-align: middle;
 	border-color: inherit;
 	color: #fafafa;
-}
-
-th {
-	padding: .25em .5em;
+	display: table-header-group;
+	text-align: left;
+	vertical-align: middle;
 }
 
 td {
 	padding: .5em .5em;
+}
+
+th {
+	padding: .25em .5em;
 }
 
 tr:nth-child(2n+2) {
@@ -176,12 +172,12 @@ tr:nth-child(2n+2) {
 	width: 100%;
 }
 
-#contain > header nav ul {
-	float: right;
-}
-
 #contain > header .white p {
 	display: inline;
+}
+
+#contain > header nav ul {
+	float: right;
 }
 
 #contain > header nav ul li {
@@ -202,6 +198,22 @@ tr:nth-child(2n+2) {
 	V. Body
 */
 
+#body {
+	background: #fafafa;
+	border: 1px solid #ccc;
+	padding: 2em 1em 2em 1em;
+}
+
+.error {
+	background: rgba(255, 0, 0, 0.5);
+	border: 2px solid #FF0000;
+}
+
+.error, .notice {
+	margin-bottom: 2em;
+	padding: 1em;
+}
+
 #main nav {
 	margin-bottom: 2.5em;
 }
@@ -212,55 +224,35 @@ tr:nth-child(2n+2) {
 }
 
 #main nav li a{
-float: left;
-display: block;
-text-decoration: none;
-margin: 0;
-padding: /*7px 8px; /*padding inside each tab*/0.5em 1em;
-color: #444;
-/*border-right: 3px solid #efefef;*/
-margin-right: 1em;
-background: #ccc; /*background of tabs (default state)*/
+	background: #ccc;
+	color: #444;
+	display: block;
+	float: left;
+	margin: 0 1em 0 0;
+	padding: 0.5em 1em;
+	text-decoration: none;
 }
 
 #main nav li a:visited{
-color: #444;
+	color: #444;
 }
 
 #main nav li.selected a{
-background: #fafafa;
-border-bottom: 1px solid #fafafa;
-border-left: 1px solid #ccc;
-border-top: 1px solid #ccc;
-border-right: 1px solid #ccc;
+	background: #fafafa;
+	border-bottom: 1px solid #fafafa;
+	border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	border-right: 1px solid #ccc;
 }
+
 #main nav li a:hover {
 	background: #e1e1e1;
 }
 
-#body {
-	background: #fafafa;
-	border: 1px solid #ccc;
-	padding: 2em 1em 2em 1em;
-}
-
-form p {
-	margin-bottom: 1em;
-}
-
-.right {
-	float: right !important;
-}
-
 .meta {
+	border-top: 1px solid #eee;
 	margin-top: 2em;
 	padding-top: 2em;
-	border-top: 1px solid #eee;
-}
-
-.error {
-	border: 2px solid #FF0000;
-	background: rgba(255, 0, 0, 0.5);
 }
 
 .notice {
@@ -268,11 +260,9 @@ form p {
 	background: rgba(0, 255, 0, 0.5);
 }
 
-.error, .notice {
-	margin-bottom: 2em;
-	padding: 1em;
+.right {
+	float: right !important;
 }
-
 
 /*
 	VI. Footer
@@ -280,8 +270,8 @@ form p {
 
 #contain > footer {
 	margin-bottom: 4em;
-	text-align: center;
 	padding-top: 3em;
+	text-align: center;
 }
 
 #contain > footer p:nth-child(2) {
