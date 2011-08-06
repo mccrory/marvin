@@ -10,6 +10,10 @@
         %p.sixcol.last
           %input{:name => "post[created_at]", :type => "text", :value => @post.updated_at}/
           %input.type{:name => "type", :type => "hidden", :value => @type}/
+          
+      %section
+        %p
+          %input{:name => 'publish[]', :type => 'checkbox', :checked => @post.published} Publish?
           %input.type{:name => "post[type]", :type => "hidden", :value => @type}/
           %input.type{:name => "id", :type => "hidden", :value => @post.id}/
           %input{:name => "_method", :type => "hidden", :value => "put"}/

@@ -46,7 +46,11 @@ Marvin.controllers do
   get :page, :map => "/:permalink" do
     @page = Page.find_by_permalink(params[:permalink])
     
-    render :page
+    if @page
+      render :page
+    else
+      redirect '/404'
+    end
   end
   
 end

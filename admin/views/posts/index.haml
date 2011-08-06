@@ -11,7 +11,7 @@
             %th Actions
         %tbody
           - @posts.each do |post|
-            %tr
+            %tr{:class => post.published.to_s}
               - if post.type == "text"
                 - if !post.title.blank?
                   %td
@@ -37,5 +37,5 @@
                   %button.inline{:type => "submit", :value => "Delete"} Delete
                   
     - else
-      :maruku
-        No posts! [Why don't you make one?]()
+      No posts!
+      %a{:href => url(:posts, :new, :type => "text")} Why not create a new one.

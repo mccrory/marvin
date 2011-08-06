@@ -24,6 +24,7 @@ Admin.controllers :posts do
       type = params[:type].camelize.constantize
       
       post = type.create(params[:post])
+      post.published = params[:publish] ? 1 : 0 
       
       if post.save
         if post.published
@@ -51,6 +52,7 @@ Admin.controllers :posts do
     # PUT /marvin/posts/modify
     put :modify do
       post = Post.find(params[:id])
+      post.published = params[:publish] ? 1 : 0
       
       if post.update_attributes(params[:post])
         if post.published
