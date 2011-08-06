@@ -25,6 +25,7 @@ Admin.controllers :posts do
       
       post = type.create(params[:post])
       post.published = params[:publish] ? 1 : 0 
+      post.creator = current_account
       
       if post.save
         if post.published
@@ -53,6 +54,7 @@ Admin.controllers :posts do
     put :modify do
       post = Post.find(params[:id])
       post.published = params[:publish] ? 1 : 0
+      post.updater = current_account
       
       if post.update_attributes(params[:post])
         if post.published
