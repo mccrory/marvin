@@ -1,7 +1,7 @@
 # Defines our constants
 PADRINO_ENV  = ENV["PADRINO_ENV"] ||= ENV["RACK_ENV"] ||= "development"  unless defined?(PADRINO_ENV)
 PADRINO_ROOT = File.expand_path('../..', __FILE__) unless defined?(PADRINO_ROOT)
-MARVIN_VERSION = "0.1.0 beta"
+MARVIN_VERSION = "0.1.1"
 
 # Load our dependencies
 require 'rubygems' unless defined?(Gem)
