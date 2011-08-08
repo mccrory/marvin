@@ -6,61 +6,10 @@
 /*
 	= Appendix
 		I. Media Queries
-		II. 
-*/
-
-/*
-	I. Animations
-*/
-
-/* Disabled for development.
-@-webkit-keyframes reset {
-	0% {
-		opacity: 0;
-	}
-	
-	100% {
-		opacity: 0;
-	}
-}
- 
-@-webkit-keyframes fade-in {
-	0% {
-		opacity: 0;
-	}
-	
-	60% {
-		opacity: 0;
-	}
-	
-	100% {
-		opacity: 1;
-	}
-}
-
-#contain > header {
-	-webkit-animation-name: reset, fade-in;
-    -webkit-animation-duration: 3s;
-    -webkit-animation-timing-function: ease-in;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-delay: 0, 0;
-}
-
-#main {
-	-webkit-animation-name: reset, fade-in;
-    -webkit-animation-duration: 3s;
-    -webkit-animation-timing-function: ease-in;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-delay: 0, 0.25s;
-}
-
-#contain > footer {
-	-webkit-animation-name: reset, fade-in;
-    -webkit-animation-duration: 3s;
-    -webkit-animation-timing-function: ease-in;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-delay: 0, 0.5s;
-}
+		II. Universal
+		III. Header
+		IV. Body
+		V. Footer
 */
 
 /*
@@ -68,7 +17,19 @@
 */
 
 @media handheld, only screen and (max-width: 767px) { /* Handheld devices. */
-
+	
+	#contain > header input {
+		margin-top: 1em;
+	}
+	
+	h3.query, #contain > footer p {
+		margin-left: 2em;
+	}
+	
+	aside {
+		margin-top: 2em;
+	}
+	
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) { /* iPhone 4 */
@@ -76,7 +37,7 @@
 }
 
 /*
-	II. 
+	II. Universal
 */
 
 body {
@@ -121,6 +82,10 @@ h2 {
 h3 {
 	font-size: 1.125em;
 	margin-bottom: 0.5em;
+}
+
+h3.query {
+	margin-bottom: 3em;
 }
 
 input, textarea, button {
@@ -168,8 +133,8 @@ textarea {
 	padding-bottom: 2em;
 }
 
-#contain > header ul {
-	margin: 0;
+#contain > header input {
+	width: 10em;
 }
 
 #contain > header li {
@@ -187,6 +152,10 @@ textarea {
 
 #contain > header nav {
 	margin-top: 1em;
+}
+
+#contain > header ul {
+	margin: 0;
 }
 
 /*
@@ -240,3 +209,4 @@ textarea {
 	margin-top: 4em;
 	padding-top: 2em;
 }
+

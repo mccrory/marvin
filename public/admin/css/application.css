@@ -1,12 +1,16 @@
 /*
-	
+	Marvin
 		file: css/application.css
 */
 
 /*
 	= Appendix
-		I. Media Queries
-		II. 
+		I. Typefaces
+		II. Media Queries
+		III. Universal
+		IV. Header
+		V. Body
+		VI. Footer 
 */
 
 /*
@@ -28,7 +32,7 @@
 }
 
 /*
-	III. 
+	III. Universal
 */
 
 body {

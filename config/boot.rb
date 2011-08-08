@@ -17,7 +17,7 @@ require 'ostruct'
 if @@yaml["options"]["feedburner"]
   feed = @@yaml["options"]["feedburner"]
 else
-  feed = "feed.xml"
+  feed = "/feed.xml"
 end
 
 Blog = OpenStruct.new(

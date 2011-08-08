@@ -13,7 +13,7 @@ class Post
   timestamps!
   
   # Hunt
-  searches :title
+  
   
   # Associations
   belongs_to :user
@@ -39,12 +39,16 @@ end
 class Text < Post
   key :title, String
   key :body, String
+  
+  searches :title, :body
 end
 
 class Photo < Post
   key :url, String
   key :alt, String
   key :caption, String
+  
+  searches :alt, :caption
 end
 
 class Audio < Post
@@ -54,27 +58,37 @@ class Audio < Post
   key :album, String
   key :art, String
   key :caption, String
+  
+  searches :track, :artist, :album, :caption
 end
 
 class Video < Post
   key :embed, String
   key :caption, String
+  
+  searches :caption
 end
 
 class Quote < Post
   key :quote, String
   key :speaker, String
   key :caption, String
+  
+  searches :quote, :speaker, :caption
 end
 
 class Link < Post
   key :url, String
   key :title, String
   key :caption, String
+  
+  searches :title, :caption
 end
 
 class Code < Post
   key :gist_url, String
   key :code, String
   key :caption, String
+  
+  searches :caption
 end

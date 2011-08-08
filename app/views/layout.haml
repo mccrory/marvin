@@ -19,33 +19,38 @@
     %link{:href => "/img/apple-touch-icon.png", :rel => "apple-touch-icon"}
     %link{:href => "/css/gyaku.css", :rel => "stylesheet"}
     %link{:href => "/css/application.css", :rel => "stylesheet"}
+    
+    - if @@yaml["options"]["animations"]
+      %link{:href => "/css/animations.css", :rel => "stylesheet"}
+    
     %link{:href => Blog.feed, :rel => "alternate", :type => "application/rss+xml"}
     
     %script{:src => "/jsc/lib/modernizr-1.7.min.js"}
   %body
     #contain
       %header.row
-        %h1
-          %a{:href => url(:index)}= Blog.name
+        %hgroup.row
+          %h1.eightcol
+            %a{:href => url(:index)}= Blog.name
+          %form#search.fourcol.last{:action => url(:search), :method => "post"}
+            %p
+              %input{:name => "query", :placeholder => "Type and press enter...", :type => "text"}/
         %nav
           %ul
             - @pages.each do |page|
               %li
                 %a{:href => url(:page, :permalink => page.permalink)}= page.title
-        %hgroup{:style => "float: right"}
-          %form{:action => url(:search), :method => "post"}
-            %p
-              %input{:name => "query", :placeholder => "Type query and press enter...", :type => "text"}/
       #main.row.articles{:role => "main"}
         
         =yield
         
-        
       %footer.row
-        %p
-          Powered by
-          = succeed "." do
-            %a{:href => "#"} Marvin
+        %section#left.sixcol
+          :maruku
+            Powered by [Marvin](http://github.com/eturk/marvin).
+            
+            [RSS](#{Blog.feed})
+            
     %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"}
     :javascript
       !window.jQuery && document.write(unescape('%3Cscript src="jsc/lib/jquery-1.5.1.min.js"%3E%3C/script%3E'))    %script{:src => "jsc/gyaku.js"}

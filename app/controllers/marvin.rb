@@ -44,10 +44,10 @@ Marvin.controllers do
   
   # GET /feed.atom
   # A RSS feed.
-  get :feed, :provides => :xml do
+  get :feed, :provides => [ :xml ] do
     @posts = Post.sort(:updated_at.desc)
     
-    builder :'feed'
+    builder :feed
   end
   
   # GET /:year/:month/:day/:permalink
@@ -64,11 +64,7 @@ Marvin.controllers do
   get :page, :map => "/:permalink" do
     @page = Page.find_by_permalink(params[:permalink])
     
-    if @page
-      render :page
-    else
-      redirect '/404'
-    end
+    render :page
   end
   
 end
