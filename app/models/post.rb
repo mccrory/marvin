@@ -12,9 +12,6 @@ class Post
   
   timestamps!
   
-  # Hunt
-  
-  
   # Associations
   belongs_to :user
   many :comments
@@ -25,16 +22,7 @@ class Post
   
   # Indexes
   ensure_index [[:permalink, 1]], :unique => true
-  
-  # Ables
-  def updateable_by?(user)
-    creator == user
-  end
-  
-  def destroyable_by?(user)
-    updateable_by?(user)
-  end
-end
+end  
 
 class Text < Post
   key :title, String

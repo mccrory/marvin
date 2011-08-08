@@ -20,6 +20,15 @@ class Comment
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
   validates_format_of :url, :with => /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$/ix
   
+  # Callbacks
+  after_create :convert_times
+  after_update :convert_times
+  
+  def convert_times
+    self.created_at = self.created_at.localtime(@@yaml["offset"])
+    self.updated_at = self.updated_at.localtime(@@yaml["offset"])
+  end
+  
   # Methods
   def invert_status
     self.approved = !self.approved

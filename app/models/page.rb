@@ -15,13 +15,4 @@ class Page
   # Validations
   validates_presence_of :title
   validates_presence_of :permalink
-  
-  # Ables
-  def updateable_by?(user)
-    creator == user
-  end
-  
-  def destroyable_by?(user)
-    updateable_by?(user)
-  end
 end
