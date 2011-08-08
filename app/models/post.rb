@@ -2,13 +2,18 @@ class Post
   include MongoMapper::Document
   include Canable::Ables
   
+  # Plugins
+  plugin Hunt
+  
   # Keys
   key :permalink, String
   key :published, Boolean
   key :type, String
   
   timestamps!
-  userstamps!
+  
+  # Hunt
+  searches :title
   
   # Associations
   belongs_to :user

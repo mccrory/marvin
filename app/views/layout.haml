@@ -32,6 +32,10 @@
             - @pages.each do |page|
               %li
                 %a{:href => url(:page, :permalink => page.permalink)}= page.title
+        %hgroup{:style => "float: right"}
+          %form{:action => url(:search), :method => "post"}
+            %p
+              %input{:name => "query", :placeholder => "Type query and press enter...", :type => "text"}/
       #main.row.articles{:role => "main"}
         
         =yield

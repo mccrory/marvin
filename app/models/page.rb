@@ -8,7 +8,6 @@ class Page
   key :permalink, String
   
   timestamps!
-  userstamps!
   
   # Associations
   belongs_to :user

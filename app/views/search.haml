@@ -1,0 +1,13 @@
+%h3 Search results for "#{@query}".
+
+- if !@posts.blank?
+  - @posts.each do |post|
+    %article.row{:class => post.type}
+      = partial 'posts/' + post.type, :locals => { :post => post }
+      %aside.fourcol.last
+        %time{:timedate => post.created_at}
+          %a{:href => url(:post, :permalink => post.permalink)}= post.created_at.strftime("%d %B %Y")
+- else
+  %p
+    %em
+      No results!

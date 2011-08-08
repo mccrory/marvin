@@ -10,9 +10,13 @@ gem 'rack-flash'
 
 # Component requirements
 gem 'haml'
-gem 'mongo_mapper'
+gem 'mongo_mapper', '0.8.6'
 gem 'bson_ext', :require => "mongo"
+
+
+# Project requirements
 gem 'canable'
+gem 'hunt'
 gem 'maruku'
 gem 'paginator'
 

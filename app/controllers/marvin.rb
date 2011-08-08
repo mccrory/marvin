@@ -19,10 +19,28 @@ Marvin.controllers do
   get :paginate, :map => '/page/:number' do
     paginate!(Post, 10)
     
-    @posts = @paginator.page(params[:number])
+    @posts = @paginator.page(params[:number]).count
     
     render :index
   end
+  
+  # GET /search/:query
+  # Display search results.
+  get :results, :map => '/search/:query' do
+    @query = desearchize(params[:query])
+  
+    @posts = Post.search(@query)
+    
+    render :search
+  end
+  
+    # GET /search
+    # A redirect, really.
+    post :search do
+      query = params[:query].gsub(/ /,"+")
+      
+      redirect url(:results, :query => query)
+    end
   
   # GET /feed.atom
   # A RSS feed.

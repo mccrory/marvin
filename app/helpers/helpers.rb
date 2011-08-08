@@ -9,4 +9,12 @@ Marvin.helpers do
       collection.limit(per_page).offset(offset).sort(:updated_at.desc).where(:published => true)
 	  end
 	end
+	
+	def searchize(string)
+	  string.gsub(/ /, "+")
+	end
+	
+	def desearchize(string)
+	  string.gsub(/\+/, " ")
+	end
 end

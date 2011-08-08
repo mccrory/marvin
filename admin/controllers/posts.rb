@@ -25,7 +25,6 @@ Admin.controllers :posts do
       
       post = type.create(params[:post])
       post.published = params[:publish] ? 1 : 0 
-      post.creator = current_account
       
       if post.save
         if post.published
