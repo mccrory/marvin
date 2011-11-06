@@ -1,7 +1,6 @@
-MongoMapper.connection = Mongo::Connection.new('localhost', nil, :logger => logger)
+require 'yaml'
 
-case Padrino.env
-  when :development then MongoMapper.database = 'marvin_development'
-  when :production  then MongoMapper.database = 'marvin_production'
-  when :test        then MongoMapper.database = 'marvin_test'
-end
+configuration = YAML::load(File.open(File.join(PADRINO_ROOT, 'db', 'mongo.yml')))
+
+MongoMapper.setup(configuration, PADRINO_ENV)
+

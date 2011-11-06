@@ -1,0 +1,20 @@
+defaults: &defaults
+  adapter: mongodb
+  
+development:
+  <<: *defaults
+  host: localhost
+  database: marvin_development
+  port: 27017
+  
+test:
+  <<: *defaults
+  host: localhost
+  database: marvin_test
+  port: 27017
+  
+production:
+  <<: *defaults
+  host: localhost
+  database: marvin_production
+  port: 27017

@@ -1,5 +1,4 @@
 Marvin.controllers do
-  
   before do
     @pages = Page.all
   end
@@ -8,7 +7,6 @@ Marvin.controllers do
   # Display the post index.
   get :index do
     paginate!(Post, 10)
-  
     @posts = @paginator.page(1)
     
     render :index
@@ -18,7 +16,6 @@ Marvin.controllers do
   # Display paginated stuff.
   get :paginate, :map => '/page/:number' do
     paginate!(Post, 10)
-    
     @posts = @paginator.page(params[:number]).count
     
     render :index
@@ -28,19 +25,18 @@ Marvin.controllers do
   # Display search results.
   get :results, :map => '/search/:query' do
     @query = desearchize(params[:query])
-  
     @posts = Post.search(@query)
     
     render :search
   end
   
-    # GET /search
-    # A redirect, really.
-    post :search do
-      query = params[:query].gsub(/ /,"+")
-      
-      redirect url(:results, :query => query)
-    end
+  # GET /search
+  # A redirect, really.
+  post :search do
+    query = params[:query].gsub(/ /,"+")
+    
+    redirect url(:results, :query => query)
+  end
   
   # GET /feed.atom
   # A RSS feed.
@@ -54,7 +50,6 @@ Marvin.controllers do
   # Display a single post.
   get :post, :map => "/post/:permalink" do
     @post = Post.find_by_permalink(params[:permalink])
-    #@comments = @post.comments.sort(:updated_at.desc)
     
     render :post
   end
@@ -66,5 +61,4 @@ Marvin.controllers do
     
     render :page
   end
-  
 end
