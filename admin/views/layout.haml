@@ -26,31 +26,27 @@
         .black
           %hgroup.row
             %h1.sixcol
-              %a{:href => Marvin.url(:index)}= Blog.name
+              %a{:href => url(:index)}= Blog.name
             %nav.sixcol.last
               %ul
                 %li
-                  %a{:href => url(:index)} General
-                %li
-                  %a{:href => url(:posts, :index)} Posts
-                %li
-                  %a{:href => url(:comments, :index)} Comments
-                %li
-                  %a{:href => url(:pages, :index)} Pages
+                  %a{:href => url(:index)} Home
                 %li
                   %a{:href => url(:accounts, :index)} Users
+                %li
+                  %a{:href => url(:posts, :index)} Entries
+                %li
+                  %a{:href => url(:pages, :index)} Pages
         .white
           %hgroup.row
             %p
               Hello, 
               =current_account.name
-              %a{:href => url(:sessions, :destroy)} Logout →
+              %a{:href => url(:sessions, :destroy)} Logout &rarr;
             %p.right
-              %a{:href => Marvin.url(:index)} View Site →
+              %a{:href => Marvin.url(:index)} View Site &rarr;
       #main{:role => "main"}
-        
         =yield
-        
       %footer.row
         %p Marvin is depressedly intelligent.
         %p Version #{MARVIN_VERSION}

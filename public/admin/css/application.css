@@ -213,12 +213,12 @@ tr:nth-child(2n+2) {
 	padding: 1em;
 }
 
-#main nav {
-	margin-bottom: 2.5em;
+#main nav ul {
+    margin-bottom: -0.5em;
 }
 
 #main nav li {
-	display: inline;
+	display: inline-block;
 	margin: 0;
 }
 

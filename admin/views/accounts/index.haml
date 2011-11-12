@@ -1,5 +1,5 @@
 #inner.row
-  = partial 'partials/nav/accounts'
+  = partial 'partials/nav/accounts', :locals => { :selected => "manage" }
   %section#body
     =flash_tag :notice
     - if !@accounts.blank?

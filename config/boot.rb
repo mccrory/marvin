@@ -27,6 +27,10 @@ Blog = OpenStruct.new(
   :feed => feed
 )
 
+Padrino.after_load do
+  Encoding.default_internal = nil
+end
+
 ##
 # Enable devel logging
 #

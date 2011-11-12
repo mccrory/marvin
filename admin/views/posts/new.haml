@@ -1,5 +1,5 @@
 #inner.row
-  = partial 'partials/nav/posts'
+  = partial 'partials/nav/posts', :locals => { :selected => @type }
   %section#body
     =flash_tag :error
     %form.row{:action => url(:posts, :create), :method => "post"}

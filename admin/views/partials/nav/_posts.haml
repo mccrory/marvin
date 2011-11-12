@@ -1,19 +1,65 @@
 %nav.posts
   %ul
-    %li
-      %a{:href => url(:posts, :index)} Manage
-    %li
-      %a.text{:href => '/marvin/posts/new/text'} Text 
-    %li
-      %a.photo{:href => '/marvin/posts/new/photo'} Photo
-    %li
-      %a.audio{:href => '/marvin/posts/new/audio'} Audio 
-    %li
-      %a.video{:href => '/marvin/posts/new/video'} Video
-    %li
-      %a.quote{:href => '/marvin/posts/new/quote'} Quote
-    %li
-      %a.link{:href => '/marvin/posts/new/link'} Link
-    %li
-      %a.code{:href => '/marvin/posts/new/code'} Code 
+    - if selected == "manage"
+      %li.selected
+        %a{:href => url(:posts, :index)} Manage
+    - else
+      %li
+        %a{:href => url(:posts, :index)} Manage
+    
+    
+    - if selected == "text"
+      %li.selected
+        %a.text{:href => '/marvin/posts/new/text'} Text 
+    - else
+      %li
+        %a.text{:href => '/marvin/posts/new/text'} Text 
+    
+    
+    - if selected == "photo"
+      %li.selected
+        %a.photo{:href => '/marvin/posts/new/photo'} Photo
+    - else
+      %li
+        %a.photo{:href => '/marvin/posts/new/photo'} Photo
+    
+    
+    - if selected == "audio"
+      %li.selected
+        %a.audio{:href => '/marvin/posts/new/audio'} Audio
+    - else
+      %li
+        %a.audio{:href => '/marvin/posts/new/audio'} Audio
+    
+    
+    - if selected == "video"
+      %li.selected
+        %a.video{:href => '/marvin/posts/new/video'} Video
+    - else
+      %li
+        %a.video{:href => '/marvin/posts/new/video'} Video
+    
+    
+    - if selected == "quote"
+      %li.selected
+        %a.quote{:href => '/marvin/posts/new/quote'} Quote
+    - else
+      %li
+        %a.quote{:href => '/marvin/posts/new/quote'} Quote
+    
+    
+    - if selected == "link"
+      %li.selected
+        %a.link{:href => '/marvin/posts/new/link'} Link
+    - else
+      %li
+        %a.link{:href => '/marvin/posts/new/link'} Link
+    
+    
+    - if selected == "code"
+      %li.selected
+        %a.code{:href => '/marvin/posts/new/code'} Code 
+    - else
+      %li
+        %a.code{:href => '/marvin/posts/new/code'} Code 
       

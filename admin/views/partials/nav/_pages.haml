@@ -1,8 +1,17 @@
 %nav.pages
   %ul
-    %li
-      %a{:href => url(:pages, :index)} Manage
-    %li
-      %a{:href => url(:pages, :new)} New
+    - if selected == "manage"
+      %li.selected
+        %a{:href => url(:pages, :index)} Manage
+    - else
+      %li
+        %a{:href => url(:pages, :index)} Manage
+    
+    - if selected == "new"
+      %li.selected
+        %a{:href => url(:pages, :new)} New
+    - else
+      %li
+        %a{:href => url(:pages, :new)} New
 
       
