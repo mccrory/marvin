@@ -8,13 +8,14 @@
           %tr
             %th Name
             %th Email
-            %th Created At
+            %th Timestamp
             %th Actions
         %tbody
           - @accounts.each do |account|
             %tr
               %td= "#{account.name} #{account.surname}"
               %td= account.email
+              %td= account.created_at
               %td
                 %a{:href => url(:accounts, :edit, :id => account.id)} Edit
                 &mdash;

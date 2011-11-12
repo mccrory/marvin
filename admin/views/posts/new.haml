@@ -8,7 +8,7 @@
         %p.sixcol
           %input{:name => "post[permalink]", :placeholder => "Permalink (required)", :type => "text"}/
         %p.sixcol.last
-          %input{:name => "post[created_at]", :placeholder => Time.now, :type => "text"}/
+          %input{:name => "timestamp", :placeholder => Time.now, :type => "text"}/
           %input.type{:name => "type", :type => "hidden", :value => @type}/
           
       %section

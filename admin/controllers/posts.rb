@@ -24,6 +24,7 @@ Admin.controllers :posts do
       type = params[:type].camelize.constantize
       
       post = type.create(params[:post])
+      post.created_at = Time.parse(params[:timestamp])
       post.published = params[:publish] ? 1 : 0 
       
       if post.save
