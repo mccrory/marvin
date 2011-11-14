@@ -6,31 +6,26 @@ class Account
   
   attr_accessor :password
   
-  # Keys
   key :name, String
   key :surname, String
   key :email, String
   key :crypted_password, String
   key :salt, String
   key :role, String, :default => "admin"
-  
+
   timestamps!
   
-  # Associations
   many :posts
   many :pages
   
-  # Validations
   validates_presence_of :name
   validates_presence_of :email
   validates_presence_of :password
   validates_uniqueness_of :email, :case_sensitive => false
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
   
-  # Callbacks
   before_save :generate_password
   
-  # Methods
   def self.authenticate(email, password)
     account = find_by_email(email) if email.present?
     account && account.password_clean == password ? account : nil

@@ -5,18 +5,12 @@ class Admin < Padrino::Application
   register Padrino::Cache
   register Padrino::Admin::AccessControl
   
-  # Sessions
   enable :sessions
-  
-  # Caching
-  enable :caching
-  set :cache, Padrino::Cache::Store::Memory.new(50)
-  
-  # Authentication
   enable :authentication
+  
   disable :store_location
+  
   set :login_page, "/marvin/sessions/new"
-
   
   access_control.roles_for :any do |role|
     role.protect "/"
@@ -31,7 +25,5 @@ class Admin < Padrino::Application
     role.project_module :accounts, "/accounts"
   end
   
-  # Miscellaneous
-  layout :layout
-  
+  layout :application
 end
